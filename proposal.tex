@@ -6,17 +6,25 @@
 \section{Project Proposal}
 
 \subsection{Introduction}
-Magic: The Gathering (MTG) is the first Collectible Card Game (CCG), created in 1993 by Richard Garfield \textemdash{} an American computational mathematician \textemdash{} for Wizards of the Coast (WotC).\\
-Over 30 years later, the game remains immensely popular. To date, over 30,000 unique cards have been produced, in sets that now release around 6 times per year. WotC continues to produce the game under the ownership of Hasbro, who report that MTG is played by over 50 million people, and boast that it is their first ``\$1 Billion brand''.\\
-A side-effect of MTG's immense popularity combined with its computational origins is a necessary exactness to the game rules, such that every rules question \textemdash{} no matter how obscure \textemdash{} must have an objective resolution. This is achieved in two ways: firstly, an over-300 page long docuemnt of \href{https://magic.wizards.com/en/rules}{comprehensive rules}, which intentionally reads like a law book; and secondly, rules text on cards, which must adhere to the aforementioned comprehensive rules and unambiguously present the actions and abilities of the card to the player, whilst remaining understandable enough to mentally parse.\\
-Cards' rules text is collated in WotC's Gatherer database, wherein the most up-to-date version of rules text is known as ``Oracle Text''. A card's Oracle Text is its most definitive reading, when it differs from what was originally printed. Oracle Text has been updated over time with the aim of clarifying ambiguity, incorporating rules changes, and \textemdash{} most importantly to this project \textemdash{} largely standardising the rules language. \\
-The result of this is that Oracle Text lies somewhere between a natural language and an artificial language.\\
-Academic papers have been written on MTG. Most notably, a 2019 paper proves that MTG is Turing Complete.\\
-Previously, formal grammars have been produced (though not academically recorded) which are successful in parsing a subset of Oracle text. These grammars tend to be hand-written rather than induced, likely owing to a lack of annotated data available in this field.\\
-I propose the production of an Unsupervised Grammar Induction (UGI) system for MTG cards, which produces a learned grammar for Oracle Text.\\
+Magic: The Gathering (MTG) is a Collectible Card Game (CCG), created in 1993 by Richard Garfield \textemdash{} an American computational mathematician \textemdash{} for Wizards of the Coast (WotC).
+
+Over 30 years later, the game remains immensely popular. To date, over 30,000 unique cards have been produced, in sets that now release around 6 times per year. WotC continues to produce the game under the ownership of Hasbro, who report that MTG is played by over 50 million people, and boast that it is their first ``\$1 Billion brand''.
+
+A side-effect of MTG's immense popularity combined with its computational origins is a necessary exactness to the game rules, such that every rules question must have an objective resolution. This is achieved in two ways: firstly, an over-300 page long docuemnt of \href{https://magic.wizards.com/en/rules}{comprehensive rules}, which intentionally reads like a law book; and secondly, rules text on cards, which must adhere to the aforementioned comprehensive rules and unambiguously present the actions and abilities of the cards to the player, whilst remaining understandable enough to mentally parse.
+
+Cards' rules text is collated in WotC's Gatherer database, wherein the most up-to-date version is known as ``Oracle Text''. A card's Oracle Text is its definitive reading, when it differs from the original printing. Oracle Text has been updated over time with the aim of clarifying ambiguity, incorporating rules changes, and \textemdash{} most importantly to this project \textemdash{} largely standardising the rules language.
+
+The result of this is that Oracle Text lies somewhere between a natural language and an artificial language.
+
+Academic papers have been written on MTG. Most notably, a 2019 paper proves that MTG is Turing Complete.
+
+Previously, formal grammars have been produced (though not academically evaluated) which are successful in parsing a subset of Oracle text. These grammars tend to be hand-written rather than induced, likely owing to a lack of pre-annotated data available in this field.\bigskip
+
+I propose the production of an Unsupervised Grammar Induction (UGI) system for MTG cards, which produces a learned grammar for Oracle Text.
+
 This will involve the following subtasks:
 \begin{itemize}
-    \item Research UGI systems
+    \item Research existing UGI systems
     \item Prepare test data
     \begin{itemize}
         \item Ingest, extract, and store data from API
