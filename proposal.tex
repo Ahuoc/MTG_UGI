@@ -5,7 +5,7 @@
 
 \section{Project Proposal}
 
-\subsection{Introduction}
+\subsection{Introduction and Description of Work}
 Magic: The Gathering (MTG) is a Collectible Card Game (CCG), created in 1993 by Richard Garfield \textemdash{} an American computational mathematician \textemdash{} for Wizards of the Coast (WotC).
 
 Over 30 years later, the game remains immensely popular. To date, over 30,000 unique cards have been produced, in sets that now release around 6 times per year. WotC continues to produce the game under the ownership of Hasbro, who report that MTG is played by over 50 million people, and boast that it is their first ``\$1 Billion brand''.
@@ -24,16 +24,47 @@ I propose the production of an Unsupervised Grammar Induction (UGI) system for M
 
 This will involve the following subtasks:
 \begin{itemize}
-    \item Research existing UGI systems
+    \item Research existing UGI approaches
+    \begin{itemize}
+        \item Determine how appropriate each approach is to this use-case
+        \item Determine the complexity of each approach
+        \item Decide upon one approach to focus on for the implementation
+        \item Research and understand the decided algorithm
+        \item Research evaluation methods that do not rely on annotated data
+    \end{itemize}
     \item Prepare test data
     \begin{itemize}
-        \item Ingest, extract, and store data from API
-        \item Annotate a subset of data by hand
+        \item Extract and store data from Scryfall/Gatherer API
+        \item Filter out excluded cards
+        \item Separate split cards
+        \item Annotate a subset of data by hand for later evaluation
     \end{itemize}
     \item Implement data pre-processing
-    \item Implement UGI training
+    \begin{itemize}
+        \item Replace card name with \texttt{<CARDNAME>} token
+        \item Strip reminder text
+        \item Split text per ability/effect/line
+        \item Perform lexing
+    \end{itemize}
+    \item Implement chosen UGI training algorithm in line with research
+    \item Produce grammar through implemented algorithm
     \item Evaluate performance
+    \begin{itemize}
+        \item Evaluate against hand-annotated data
+        \item Evaluate against unannotated data
+        \item Evaluate performance of Oracle-trained grammar on natural English dataset
+        \item Evaluate grammar trained on natural English against Oracle text (lower-priority)
+    \end{itemize}
 \end{itemize}
 
+\subsection{Starting Point}
+
+I 
+
+\subsection{Success Criteria}
+
+\subsection{Plan and Milestones}
+
+\subsection{Resource Declaration}
 
 \end{document}
