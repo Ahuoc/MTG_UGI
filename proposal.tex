@@ -1,5 +1,7 @@
 \documentclass{article}
+\usepackage[T1]{fontenc}
 \usepackage{hyperref}
+\usepackage{xurl}
 
 \begin{document}
 
@@ -10,7 +12,7 @@ Magic: The Gathering (MTG) is a Collectible Card Game (CCG), created in 1993 by 
 
 Over 30 years later, the game remains immensely popular. To date, over 30,000 unique cards have been produced, in sets that now release around 6 times per year. WotC continues to produce the game under the ownership of Hasbro, who report that MTG is played by over 50 million people, and boast that it is their first ``\$1 Billion brand''.
 
-A side-effect of MTG's immense popularity combined with its computational origins is a necessary exactness to the game rules, such that every rules question must have an objective resolution. This is achieved in two ways: firstly, an over-300 page long docuemnt of \href{https://magic.wizards.com/en/rules}{comprehensive rules}, which intentionally reads like a law book; and secondly, rules text on cards, which must adhere to the aforementioned comprehensive rules and unambiguously present the actions and abilities of the cards to the player, whilst remaining understandable enough to mentally parse.
+A side-effect of MTG's immense popularity combined with its computational origins is a necessary exactness to the game rules, such that every rules question must have an objective resolution. This is achieved in two ways: firstly, an over-300 page long document of \href{https://magic.wizards.com/en/rules}{comprehensive rules}, which intentionally reads like a law book; and secondly, rules text on cards, which must adhere to the aforementioned comprehensive rules and unambiguously present the actions and abilities of the cards to the player, whilst remaining understandable enough to mentally parse.
 
 Cards' rules text is collated in WotC's Gatherer database, wherein the most up-to-date version is known as ``Oracle Text''. A card's Oracle Text is its definitive reading, when it differs from the original printing. Oracle Text has been updated over time with the aim of clarifying ambiguity, incorporating rules changes, and \textemdash{} most importantly to this project \textemdash{} largely standardising the rules language.
 
@@ -20,7 +22,9 @@ Academic papers have been written on MTG. Most notably, a 2019 paper proves that
 
 Previously, formal grammars have been produced (though not academically evaluated) which are successful in parsing a subset of Oracle text. These grammars tend to be hand-written rather than induced, likely owing to a lack of pre-annotated data available in this field.\bigskip
 
-I propose the production of an Unsupervised Grammar Induction (UGI) system for MTG cards, which produces a learned grammar for Oracle Text.
+I propose the production of an Unsupervised Grammar Induction (UGI) system for MTG cards, which learns a grammar for Oracle Text. This system will enable Oracle Text to be automatically parsed into its inherent structure, which has the potential to lead to further applications such as automated code generation and semantic search (outside the proposed scope of this project).
+
+As an initial extension, I will analyse how Oracle Text compares to natural English, through evaluation of an MTG trained grammar on natural English, and evaluation of an English trained grammar on Oracle Text.
 
 This will involve the following subtasks:
 \begin{itemize}
@@ -52,19 +56,123 @@ This will involve the following subtasks:
     \begin{itemize}
         \item Evaluate against hand-annotated data
         \item Evaluate against unannotated data
-        \item Evaluate performance of Oracle-trained grammar on natural English dataset
-        \item Evaluate grammar trained on natural English against Oracle text (lower-priority)
+        \item Evaluate performance of Oracle-trained grammar on natural English dataset (initial extension)
+        \item Evaluate grammar trained on natural English against Oracle text (initial extension)
     \end{itemize}
 \end{itemize}
 
+There is plenty of room for further extensions, the description of which is outside the scope of this proposal.
+
 \subsection{Starting Point}
 
-I 
+\begin{itemize}
+        \item No work has been completed on any project code prior to the commencement date.
+        \item I have no prior experience with Computational Linguistics outside of the Part IB Formal Models of Language course.
+        \item I have completed a small amount of advance research on UGI at a high level, primarily through this review paper: \url{https://doi.org/10.1017/S1351324920000327}
+        \item I have previously used the Scryfall API to retrieve MTG data, but I have not used it in the sense of this project.
+    \end{itemize}
 
 \subsection{Success Criteria}
 
+Project success depends on:
+\begin{enumerate}
+    \item A successful implementation of a UGI algorithm.
+    \item A data gathering script which accesses an MTG API and stores a dataset locally. 
+    \item A pre-processing system which accesses the MTG dataset and outputs UGI-ready data.
+    \item A system for evaluation of the UGI output against hand-annotated data.
+    \item A system for evaluation of the UGI output against unannotated data.
+    \item A system for evaluation of the UGI output against pre-annotated natural English. (initial extension)
+\end{enumerate}
+
 \subsection{Plan and Milestones}
 
+\subsubsection{Weeks 1--2: October 12th---October 25th}
+\begin{itemize}
+    \item
+\end{itemize}
+
+\subsubsection{Weeks 3--4: October 26th---November 8th}
+\begin{itemize}
+    \item
+\end{itemize}
+
+\subsubsection{Weeks 5--6: November 9th---November 22nd}
+\begin{itemize}
+    \item
+\end{itemize}
+
+\subsubsection{Weeks 7--8: November 23rd---December 6th}
+\begin{itemize}
+    \item
+\end{itemize}
+
+\subsubsection{Weeks 9--10: December 7th---December 20th}
+\begin{itemize}
+    \item
+\end{itemize}
+
+\subsubsection{Weeks 11--12: December 21st---January 3rd}
+\begin{itemize}
+    \item
+\end{itemize}
+
+\subsubsection{Weeks 13--14: January 4th---January 17th}
+\begin{itemize}
+    \item
+\end{itemize}
+
+\subsubsection{Weeks 15--16: January 18th---January 31st}
+\begin{itemize}
+    \item
+\end{itemize}
+
+\subsubsection{Weeks 17--18: February 1st---February 14th}
+\begin{itemize}
+    \item Project Report deadline: 5th February
+\end{itemize}
+
+\subsubsection{Weeks 19--20: February 15th---February 28th}
+\begin{itemize}
+    \item Progress Report Presentation held by 26th February
+\end{itemize}
+
+\subsubsection{Weeks 21--22: March 1st---March 14th}
+\begin{itemize}
+    \item
+\end{itemize}
+
+\subsubsection{Weeks 23--24: March 15th---March 28th}
+\begin{itemize}
+    \item
+\end{itemize}
+
+\subsubsection{Weeks 25--26: March 29th---April 11th}
+\begin{itemize}
+    \item
+\end{itemize}
+
+\subsubsection{Weeks 27--28: April 12th---April 25th}
+\begin{itemize}
+    \item
+\end{itemize}
+
+\subsubsection{Weeks 29--30: April 26th---May 9th}
+\begin{itemize}
+    \item
+\end{itemize}
+
+\subsubsection{Week 31: May 10th---May 14th}
+\begin{itemize}
+    \item Dissertation Deadline: 14th May
+\end{itemize}
+
 \subsection{Resource Declaration}
+I will use my own Laptop - an MSI Sword 16 with an Intel i7-14700HX, 16GB RAM, and an RTX 4060 Laptop GPU. I accept full responsibility for this machine and I have made contingency plans to protect myself against hardware and/or software failure.
+
+I intend to access the Scryfall API to gather my dataset. I will locally save the data gathered so as to avoid the risk inherent with relying upon a live API.
+
+I will need to access a popular source of pre-annotated natural English data for evaluation for the initial extension. The exact source depends on the chosen UGI method. As above, I will store required data locally where possible.
+
+I will use Git as a version control system with GitHub for backup, as well as OneDrive.
 
 \end{document}
