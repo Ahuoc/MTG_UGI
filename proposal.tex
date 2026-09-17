@@ -12,7 +12,7 @@ Magic: The Gathering (MTG) is a Collectible Card Game (CCG), created in 1993 by 
 
 Over 30 years later, the game remains immensely popular. To date, over 30,000 unique cards have been produced, in sets that now release around 6 times per year. WotC continues to produce the game under the ownership of Hasbro, who report that MTG is played by over 50 million people, and boast that it is their first ``\$1 Billion brand''.
 
-A side-effect of MTG's immense popularity combined with its computational origins is a necessary exactness to the game rules, such that every rules question must have an objective resolution. This is achieved in two ways: firstly, an over-300 page long document of \href{https://magic.wizards.com/en/rules}{comprehensive rules}, which intentionally reads like a law book; and secondly, rules text on cards, which must adhere to the aforementioned comprehensive rules and unambiguously present the actions and abilities of the cards to the player, whilst remaining understandable enough to mentally parse.
+A consequence of MTG's computational origins combined with the scrutiny inherent in immense popularity is a necessary exactness to the game rules, such that every rules question must have an objective resolution. This is achieved in two ways: firstly, an over-300 page long document of \href{https://magic.wizards.com/en/rules}{comprehensive rules}, which intentionally reads like a law book; and secondly, rules text on cards, which must adhere to the aforementioned comprehensive rules and unambiguously present the actions and abilities of the cards to the player, whilst remaining understandable enough to mentally parse.
 
 Cards' rules text is collated in WotC's Gatherer database, wherein the most up-to-date version is known as ``Oracle Text''. A card's Oracle Text is its definitive reading, when it differs from the original printing. Oracle Text has been updated over time with the aim of clarifying ambiguity, incorporating rules changes, and \textemdash{} most importantly to this project \textemdash{} largely standardising the rules language.
 
@@ -20,13 +20,13 @@ The result of this is that Oracle Text lies somewhere between a natural language
 
 Academic papers have been written on MTG. Most notably, a 2019 paper proves that MTG is Turing Complete.
 
-Previously, formal grammars have been produced (though not academically evaluated) which are successful in parsing a subset of Oracle text. These grammars tend to be hand-written rather than induced, likely owing to a lack of pre-annotated data available in this field.\bigskip
+Previously, formal grammars have been produced (though not academically evaluated) which are successful in parsing a subset of Oracle text. These grammars tend to be hand-written rather than induced, which could be due to a lack of pre-annotated data available in this field---meaning supervised grammar induction approaches are infeasible.\bigskip
 
 I propose the production of an Unsupervised Grammar Induction (UGI) system for MTG cards, which learns a grammar for Oracle Text. This system will enable Oracle Text to be automatically parsed into its inherent structure, which has the potential to lead to further applications such as automated code generation and semantic search (outside the proposed scope of this project).
 
-As an initial extension, I will analyse how Oracle Text compares to natural English, through evaluation of an MTG trained grammar on natural English, and evaluation of an English trained grammar on Oracle Text.
+As an initial extension, I will aim to analyse how Oracle Text compares to natural English, through evaluation of an MTG trained grammar on natural English, and evaluation of an English trained grammar on Oracle Text. \bigskip
 
-This will involve the following subtasks:
+This project will involve the following subtasks:
 \begin{itemize}
     \item Research existing UGI approaches
     \begin{itemize}
@@ -68,7 +68,7 @@ There is plenty of room for further extensions, the description of which is outs
 \begin{itemize}
         \item No work has been completed on any project code prior to the commencement date.
         \item I have no prior experience with Computational Linguistics outside of the Part IB Formal Models of Language course.
-        \item I have completed a small amount of advance research on UGI at a high level, primarily through this review paper: \url{https://doi.org/10.1017/S1351324920000327}
+        \item I have completed a small amount of advance research on UGI methods at a high level of abstraction, primarily through this review paper: \url{https://doi.org/10.1017/S1351324920000327}
         \item I have previously used the Scryfall API to retrieve MTG data, but I have not used it in the sense of this project.
     \end{itemize}
 
@@ -81,88 +81,102 @@ Project success depends on:
     \item A pre-processing system which accesses the MTG dataset and outputs UGI-ready data.
     \item A system for evaluation of the UGI output against hand-annotated data.
     \item A system for evaluation of the UGI output against unannotated data.
-    \item A system for evaluation of the UGI output against pre-annotated natural English. (initial extension)
 \end{enumerate}
 
 \subsection{Plan and Milestones}
 
 \subsubsection{Weeks 1--2: October 12th---October 25th}
 \begin{itemize}
-    \item
+    \item Perform research to narrow down the potential UGI approaches to four candidates, with justification.
+    \item Write program to gather the dataset (API access, initial filtering and formatting)
 \end{itemize}
 
 \subsubsection{Weeks 3--4: October 26th---November 8th}
 \begin{itemize}
-    \item
+    \item Perform deep research on two of the four candidates. Rate each approach in key heuristic areas.
+    \item Start writing data pre-processing code---focus on approach-neutral processing. 
 \end{itemize}
 
 \subsubsection{Weeks 5--6: November 9th---November 22nd}
 \begin{itemize}
-    \item
+    \item Perform deep research on the remaining two candidates. Rate each approach as before.
+    \item Choose one approach to focus on.
+    \item Continue writing pre-processing code.
 \end{itemize}
 
 \subsubsection{Weeks 7--8: November 23rd---December 6th}
 \begin{itemize}
-    \item
+    \item Research and plan algorithmic implementation of the chosen UGI approach.
+    \item End of Michaelmas term---likely to be very busy period outside of the project.
 \end{itemize}
 
 \subsubsection{Weeks 9--10: December 7th---December 20th}
 \begin{itemize}
-    \item
+    \item Begin implementation of the chosen UGI approach.
+    \item Begin annotating data by hand for supervised evaluation.
 \end{itemize}
 
 \subsubsection{Weeks 11--12: December 21st---January 3rd}
 \begin{itemize}
-    \item
+    \item Complete implementation of the chosen UGI approach.
+    \item Continue annotating data.
 \end{itemize}
 
 \subsubsection{Weeks 13--14: January 4th---January 17th}
 \begin{itemize}
-    \item
+    \item Implement evaluation approaches.
+    \item Run system end-to-end, obtain initial results.
 \end{itemize}
 
 \subsubsection{Weeks 15--16: January 18th---January 31st}
 \begin{itemize}
-    \item
+    \item Buffer time for extensions.
+    \item Write progress report.
 \end{itemize}
 
 \subsubsection{Weeks 17--18: February 1st---February 14th}
 \begin{itemize}
+    \item Continued buffer time for extensions.
     \item Project Report deadline: 5th February
 \end{itemize}
 
 \subsubsection{Weeks 19--20: February 15th---February 28th}
 \begin{itemize}
+    \item Final buffer time for extensions.
     \item Progress Report Presentation held by 26th February
 \end{itemize}
 
 \subsubsection{Weeks 21--22: March 1st---March 14th}
 \begin{itemize}
-    \item
+    \item Begin dissertation writing.
+    \item Write introduction chapter.
+    \item Write preparation chapter.
 \end{itemize}
 
 \subsubsection{Weeks 23--24: March 15th---March 28th}
 \begin{itemize}
-    \item
+    \item Begin implementation chapter.
 \end{itemize}
 
 \subsubsection{Weeks 25--26: March 29th---April 11th}
 \begin{itemize}
-    \item
+    \item Complete implementation chapter.
+    \item Write evaluation chapter.
 \end{itemize}
 
 \subsubsection{Weeks 27--28: April 12th---April 25th}
 \begin{itemize}
-    \item
+    \item Improve dissertation based on feedback.
 \end{itemize}
 
 \subsubsection{Weeks 29--30: April 26th---May 9th}
 \begin{itemize}
-    \item
+    \item Buffer time for dissertation writing.
 \end{itemize}
 
 \subsubsection{Week 31: May 10th---May 14th}
 \begin{itemize}
+    \item Finalise dissertation.
     \item Dissertation Deadline: 14th May
 \end{itemize}
 
