@@ -2,12 +2,30 @@
 \usepackage[T1]{fontenc}
 \usepackage{hyperref}
 \usepackage{xurl}
+\usepackage{fancyhdr}
+\usepackage[margin=0.8in]{geometry}
+
+\newcommand{\projecttitle}{Unsupervised Grammar Induction for Magic: The Gathering Cards}
+\newcommand{\studentname}{Avi Hyman}
+\newcommand{\supervisorname}{Andrew Caines}
+\newcommand{\dosname}{Timothy Jones}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C]{%
+  \small
+  \begin{tabular}{c}
+    \textbf{\projecttitle}\\[2pt]
+    \scriptsize Student: \studentname \quad | \quad Supervisor: \supervisorname \quad | \quad DoS: \dosname
+  \end{tabular}%
+}
+\renewcommand{\headrulewidth}{0.4pt}
+\setlength{\headheight}{38pt}
+\setlength{\headsep}{8pt}
 
 \begin{document}
 
-\section{Project Proposal}
-
-\subsection{Introduction and Description of Work}
+\section{Introduction and Description of Work}
 Magic: The Gathering (MTG) is a Collectible Card Game (CCG). Currently, over 30,000 unique MTG cards exist.
 
 MTG cards' text is known as Oracle Text (OT). OT is designed to clarify ambiguity, interface with the comprehensive rulebook, and standardise the rules language.
@@ -31,7 +49,7 @@ This project will involve these subtasks:
     \end{itemize}
     \item Prepare test data
     \begin{itemize}
-        \item I will extract card data from an API and perform filtering and seperation tasks, forming a dataset.
+        \item I will extract card data from Scryfall API and perform filtering and seperation tasks, forming a dataset.
         \item I will annotate a subset of data by hand for the purpose of evaluation.
     \end{itemize}
     \item Implement data pre-processing
@@ -53,7 +71,7 @@ This project will involve these subtasks:
 
 There is plenty of room for further extensions, the description of which is outside the scope of this proposal.
 
-\subsection{Starting Point}
+\section{Starting Point}
 
 \begin{itemize}
         \item No work has been completed on any project code prior to the commencement date.
@@ -62,7 +80,7 @@ There is plenty of room for further extensions, the description of which is outs
         \item I have previously used the Scryfall API to retrieve MTG data, but I have not used it in the sense of this project.
     \end{itemize}
 
-\subsection{Success Criteria}
+\section{Success Criteria}
 
 Project success depends on:
 \begin{enumerate}
@@ -72,107 +90,107 @@ Project success depends on:
     \item A script which evaluates the UGI output against hand-annotated and unannotated data, providing a metric comparable to those used in existing papers.
 \end{enumerate}
 
-\subsection{Plan and Milestones}
+\section{Plan and Milestones}
 
-\subsubsection{12th--25th October}
+\subsection{12th--25th October}
 \begin{itemize}
     \item Perform research to narrow down the potential UGI approaches to four candidates, with justification.
     \item Write program to gather the dataset (API access, initial filtering and formatting)
 \end{itemize}
 
-\subsubsection{26th October--8th November}
+\subsection{26th October--8th November}
 \begin{itemize}
     \item Perform deep research on two of the four candidates. Rate each approach in key heuristic areas.
     \item Start writing data pre-processing code---focus on approach-neutral processing. 
 \end{itemize}
 
-\subsubsection{9th--22nd November}
+\subsection{9th--22nd November}
 \begin{itemize}
     \item Perform deep research on the remaining two candidates. Rate each approach as before.
     \item Choose one approach to focus on.
     \item Continue writing pre-processing code.
 \end{itemize}
 
-\subsubsection{23rd November--6th December}
+\subsection{23rd November--6th December}
 \begin{itemize}
     \item Research and plan algorithmic implementation of the chosen UGI approach.
     \item End of Michaelmas term---likely to be very busy period outside of the project.
 \end{itemize}
 
-\subsubsection{7th--20th December}
+\subsection{7th--20th December}
 \begin{itemize}
     \item Begin implementation of the chosen UGI approach.
     \item Begin annotating data by hand for supervised evaluation.
 \end{itemize}
 
-\subsubsection{21st December--3rd January}
+\subsection{21st December--3rd January}
 \begin{itemize}
     \item Complete implementation of the chosen UGI approach.
     \item Continue annotating data.
 \end{itemize}
 
-\subsubsection{4th--17th January}
+\subsection{4th--17th January}
 \begin{itemize}
     \item Implement evaluation approaches.
     \item Run model end-to-end, obtain initial results.
 \end{itemize}
 
-\subsubsection{18th--31st January}
+\subsection{18th--31st January}
 \begin{itemize}
     \item Buffer time for extensions.
     \item Write progress report.
 \end{itemize}
 
-\subsubsection{1st--14th February}
+\subsection{1st--14th February}
 \begin{itemize}
     \item Continued buffer time for extensions.
     \item Project Report deadline: 5th February
 \end{itemize}
 
-\subsubsection{15th--28th February}
+\subsection{15th--28th February}
 \begin{itemize}
     \item Final buffer time for extensions.
     \item Progress Report Presentation held by 26th February
 \end{itemize}
 
-\subsubsection{1st--14th March}
+\subsection{1st--14th March}
 \begin{itemize}
     \item Begin dissertation writing.
     \item Write introduction chapter.
     \item Write preparation chapter.
 \end{itemize}
 
-\subsubsection{15th--28th March}
+\subsection{15th--28th March}
 \begin{itemize}
     \item Begin implementation chapter.
 \end{itemize}
 
-\subsubsection{29th March--11th April}
+\subsection{29th March--11th April}
 \begin{itemize}
     \item Complete implementation chapter.
     \item Write evaluation chapter.
 \end{itemize}
 
-\subsubsection{12th--25th April}
+\subsection{12th--25th April}
 \begin{itemize}
     \item Improve dissertation based on feedback.
 \end{itemize}
 
-\subsubsection{26th April--9th May}
+\subsection{26th April--9th May}
 \begin{itemize}
     \item Buffer time for dissertation writing.
 \end{itemize}
 
-\subsubsection{10th--14th May}
+\subsection{10th--14th May}
 \begin{itemize}
     \item Finalise dissertation.
     \item Dissertation Deadline: 14th May
 \end{itemize}
 
-\subsection{Resource Declaration}
+\section{Resource Declaration}
 I will use my own Laptop - an MSI Sword 16 with an Intel i7-14700HX, 16GB RAM, and an RTX 4060 Laptop GPU. I accept full responsibility for this machine and I have made contingency plans to protect myself against hardware and/or software failure.
 
-I intend to access the Scryfall API to gather my dataset. I will locally save the data gathered so as to avoid the risk inherent with relying upon a live API.
+I will access the Scryfall API to gather my dataset. I will locally save the data gathered so as to avoid the risk inherent with relying upon a live API.
 
 I will need to access a popular source of pre-annotated natural English data for evaluation for the initial extension. The exact source depends on the chosen UGI method. As above, I will store required data locally where possible.
 
